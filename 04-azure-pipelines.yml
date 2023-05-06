@@ -30,8 +30,8 @@ stages:
         echo run deployment
 - stage: Test
   dependsOn: 
-    Build
-    Prod
+  - Build
+  - Prod
   jobs:
   - job: FirstTest
     steps:
