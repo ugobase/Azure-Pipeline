@@ -26,6 +26,7 @@ jobs:
   - script:
       echo Update pipeline!
       echo Run update
+      echo Push!
     displayName: 'Run a multi-line script'
         
              
