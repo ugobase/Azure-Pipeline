@@ -30,4 +30,5 @@ jobs:
       echo Update Third Job!
       echo Run update
       echo Push Job!
+      echo run tasks
     displayName: 'Run a multi-line script'
