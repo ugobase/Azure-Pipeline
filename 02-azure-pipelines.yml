@@ -17,11 +17,11 @@ jobs:
       echo run tasks
     displayName: 'Run a multi-line script'
   - script:
-      echo Second Job!
+      echo SecondJob!
       echo Runtime.
       echo Run this code!
     displayName: 'Run a multi-line script'
-- job: Third Job
+- job: ThirdJob
   steps:
   - script:
       echo Update pipeline!
