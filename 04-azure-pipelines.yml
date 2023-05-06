@@ -1,0 +1,45 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  jobs:
+  - job: FirstBuild
+    steps:
+    - bash: echo first build!
+  - job: SecondBuild
+    steps:
+    - bash:
+        echo second build
+        echo run
+- stage: Prod
+  dependsOn: Build
+  jobs:
+  - job: FirstDeploy
+    steps:
+    - bash: 
+        echo first deployment!
+        echo run deployment
+  - job: SecondDeploy
+    steps:
+    - bash: 
+        echo second deployment!
+        echo run deployment
+- stage: Test
+  dependsOn: 
+  - Build
+  - Prod
+  jobs:
+  - job: FirstTest
+    steps:
+    - bash: 
+        echo first test!
+        echo run test
+  - job: SecondTest
+    steps:
+    - bash: 
+        echo second test!
+        echo run test
