@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
 
 jobs:
-- job: FirstJob
+- job: First Job
   steps:
   - script: echo Ugobase first commit!
     displayName: 'Run a one-line script'
@@ -19,5 +19,13 @@ jobs:
   - script:
       echo Second Job!
       echo Runtime.
+      echo Run this code!
     displayName: 'Run a multi-line script'
-    
+- job: Third Job
+  steps:
+  - script:
+      echo Update pipeline!
+      echo Run update
+    displayName: 'Run a multi-line script'
+        
+             
