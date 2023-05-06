@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Ugobase's first commit!
+- script: echo Ugobase first commit!
   displayName: 'Run a one-line script'
 
 - script: |
