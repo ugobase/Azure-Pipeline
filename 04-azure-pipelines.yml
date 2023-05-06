@@ -1,16 +1,20 @@
 trigger:
 - main
 
-pool:
+#pool:
   vmImage: ubuntu-latest
 
 Stages:
 - stage: Build
   jobs:
   - job: FirstBuild
+    pool:
+      vmImage: ubuntu-latest
     steps:
     - bash: echo first build!
   - job: SecondBuild
+    pool:
+      vmImage: ubuntu-latest
     steps:
     - bash:
         echo second build
@@ -19,11 +23,15 @@ Stages:
   dependsOn: Build
   jobs:
   - job: FirstDeploy
+    pool:
+      vmImage: ubuntu-latest
     steps:
     - bash: 
         echo first deployment!
         echo run deployment
   - job: SecondDeploy
+    pool:
+      vmImage: ubuntu-latest
     steps:
     - bash: 
         echo second deployment!
@@ -34,11 +42,15 @@ Stages:
     Prod
   jobs:
   - job: FirstTest
+    pool:
+      vmImage: ubuntu-latest
     steps:
     - bash: 
         echo first test!
         echo run test
   - job: SecondTest
+    pool:
+      vmImage: ubuntu-latest
     steps:
     - bash: 
         echo second test!
