@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
 
 jobs:
-- job: First Job
+- job: FirstJob
   steps:
   - script: echo Ugobase first commit!
     displayName: 'Run a one-line script'
