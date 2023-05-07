@@ -8,9 +8,11 @@ stages:
 - stage: Build
   jobs:
   - job: FirstBuild
+    variables:
+      server: EC2
     steps:
     - bash: echo build first job!
-    - bash: echo $(environment)
+    - bash: echo $(server)
     - bash: echo $(Build.BuildNumber)
     - bash: echo $(Build.BuildId)
     - bash: echo $(Build.SourceBranchName)
