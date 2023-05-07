@@ -29,6 +29,8 @@ stages:
         echo second deployment!
         echo run deployment
 - stage: Test
+  variables:
+    environment: Test
   dependsOn: 
   - Build
   - Prod
@@ -43,3 +45,5 @@ stages:
     - bash: 
         echo second test!
         echo run test
+        echo $(age) years
+        echo $(environment) job
