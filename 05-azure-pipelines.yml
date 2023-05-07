@@ -1,0 +1,22 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- stage: Build
+  variables:
+    server: Ec2
+  jobs:
+  - job: FirstBuild
+    steps:
+    - bash: echo build first job!
+    - bash: echo $(environment)
+    - bash: echo $(Build.BuildNumber)
+    - bash: echo $(Build.BuildId)
+    - bash: echo $(Build.SourceBranchName)
+    - bash: echo $(Build.SouceDirectory)
+    - bash: echo $(System.DefaultWorkingDirectory)
+    - bash: Ls -R $(System.DefaultWorkingDirectory)
+    - bash: $(Build.ArtifactStagingDirectory)
