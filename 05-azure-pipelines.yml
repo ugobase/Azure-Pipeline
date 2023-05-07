@@ -7,7 +7,7 @@ pool:
 stages:
 - stage: Build
   variables:
-    server: Ec2
+    envirnment: Ec2
   jobs:
   - job: FirstBuild
     steps:
@@ -20,4 +20,4 @@ stages:
     - bash: echo $(System.DefaultWorkingDirectory)
     - bash: ls -R $(System.DefaultWorkingDirectory)
     - bash: $(Build.ArtifactStagingDirectory)
-    - bash: echo $(server)
+    - bash: echo $(environment)
