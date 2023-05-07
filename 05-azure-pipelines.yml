@@ -17,4 +17,4 @@ stages:
     - bash: echo $(Build.SoucesDirectory)
     - bash: echo $(System.DefaultWorkingDirectory)
     - bash: ls -R $(System.DefaultWorkingDirectory)
-    - bash: $(Build.ArtifactStagingDirectory)
+    - bash: echo $(Build.ArtifactStagingDirectory)
