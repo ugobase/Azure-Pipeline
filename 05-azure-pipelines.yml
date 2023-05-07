@@ -18,5 +18,5 @@ stages:
     - bash: echo $(Build.SourceBranchName)
     - bash: echo $(Build.SouceDirectory)
     - bash: echo $(System.DefaultWorkingDirectory)
-    - bash: Ls -R $(System.DefaultWorkingDirectory)
+    - bash: ls -R $(System.DefaultWorkingDirectory)
     - bash: $(Build.ArtifactStagingDirectory)
