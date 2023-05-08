@@ -21,3 +21,13 @@ stages:
           deploy:
             steps:
               - script: echo deploy to dev
+
+- stage: TestDeploy
+  jobs:
+    - deployment: FirstBuild
+      environment: Test
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - script: echo deploy to test
