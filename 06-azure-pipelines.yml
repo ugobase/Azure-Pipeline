@@ -9,6 +9,9 @@ strategy:
     windows:
       operatingSystem: 'windows-latest'
 
+    mac:
+      operatingSystem: 'macos-latest'
+
 pool:
   vmImage: $(operatingSystem)
 
