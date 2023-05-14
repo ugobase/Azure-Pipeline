@@ -28,11 +28,11 @@ provider "kubernetes" {
   version                = "~> 2.12"
 }
 
-module "in28minutes-cluster" {
+module "ugobase-cluster" {
   source          = "terraform-aws-modules/eks/aws"
-  cluster_name    = "in28minutes-cluster"
+  cluster_name    = "ugobase-cluster"
   cluster_version = "1.14"
-  subnets         = ["subnet-3f7b2563", "subnet-4a7d6a45"] #CHANGE
+  subnets         = ["subnet-0c3d3fa325e5b7059", "subnet-0128e3fcc0f80f66c"] #CHANGE
   #subnets = data.aws_subnet_ids.subnets.ids
   vpc_id          = aws_default_vpc.default.id
 
@@ -49,11 +49,11 @@ module "in28minutes-cluster" {
 }
 
 data "aws_eks_cluster" "cluster" {
-  name = module.in28minutes-cluster.cluster_id
+  name = module.ugobase-cluster.cluster_id
 }
 
 data "aws_eks_cluster_auth" "cluster" {
-  name = module.in28minutes-cluster.cluster_id
+  name = module.ugobase-cluster.cluster_id
 }
 
 
