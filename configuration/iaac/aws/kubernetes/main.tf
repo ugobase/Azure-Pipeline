@@ -32,13 +32,13 @@ module "ugobase-cluster" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "ugobase-cluster"
   cluster_version = "1.14"
-  subnets         = ["subnet-0c3d3fa325e5b7059", "subnet-0128e3fcc0f80f66c"] 
+  subnet_ids         = ["subnet-0c3d3fa325e5b7059", "subnet-0128e3fcc0f80f66c"] 
   #subnets = data.aws_subnet_ids.subnets.ids
   vpc_id          = aws_default_vpc.default.id
 
   #vpc_id         = "vpc-1234556abcdef"
 
-  node_groups = [
+ eks_managed_node_groups = [
     {
       instance_type = "t2.micro"
       max_capacity  = 5
